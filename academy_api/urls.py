@@ -18,8 +18,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from academy_api.views import api_home
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', api_home, name='api_home'), 
     path('api/courses/', include('courses.urls')),
     path('api/recipes/', include('recipes.urls')),
 ]

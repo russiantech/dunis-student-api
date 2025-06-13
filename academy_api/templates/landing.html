@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DunisTech API - Usage & Docs</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f4f4f4; }
+        h1 { color: #444; }
+        .endpoint, .sample { background: #fff; padding: 20px; margin: 20px 0; border-left: 4px solid #007bff; }
+        code { background: #eee; padding: 4px; border-radius: 4px; }
+        pre { background: #eee; padding: 10px; border-radius: 6px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the DunisTech Student API</h1>
+    <p>This free API is designed to help you learn to work with APIs using <strong>React, Django, and Flask</strong>.</p>
+
+    <div class="endpoint">
+        <h2>API Base URL</h2>
+        <code>{{ api_base_url }}</code>
+    </div>
+
+    <div class="endpoint">
+        <h2>Endpoints</h2>
+        <ul>
+        {% for endpoint in endpoints %}
+            <li>
+                <strong>{{ endpoint.name }}</strong><br>
+                List: <code>{{ endpoint.list }}</code><br>
+                Detail: <code>{{ endpoint.detail }}</code><br>
+                Methods: {{ endpoint.methods|join:", " }}
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+
+    <div class="sample">
+        <h2>Sample Fetch Request (JavaScript)</h2>
+        <pre>{{ sample_request.GET }}</pre>
+    </div>
+
+    <div class="sample">
+        <h2>Sample Axios POST Request</h2>
+        <pre>{{ sample_request.POST }}</pre>
+    </div>
+
+    <div class="sample">
+        <h2>Sample JSON Response</h2>
+        <h4>Courses:</h4>
+        <pre>{{ sample_response.courses|safe }}</pre>
+        <h4>Recipes:</h4>
+        <pre>{{ sample_response.recipes|safe }}</pre>
+    </div>
+</body>
+</html>
